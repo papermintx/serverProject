@@ -62,7 +62,6 @@ class UserController extends Controller
             User::create([
                 'name' => $request->name,
                 'username' => $request->username,
-                'phone' => $request->phone,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
             ]);
@@ -95,7 +94,6 @@ class UserController extends Controller
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255'],
-            'phone' => ['nullable', 'string', 'max:255'],
         ]);
 
         $user = Auth::user();

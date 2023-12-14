@@ -15,7 +15,6 @@ class ProductGallery extends Model
         'url',
     ];
 
- 
 
 
 }

@@ -39,7 +39,8 @@ class ProductCategoryController extends Controller
             $category->where('name', 'like', '%' . $name . '%');
 
         if($show_product)
-            $category->with('products');
+            // $category->with('products');
+            $category->where('name', 'like', '%' . $name . '%');
 
         return ResponseFormatter::success(
             $category->paginate($limit),
